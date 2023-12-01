@@ -50,11 +50,13 @@
         }
 
         #editor {
-            margin: 20px auto;
+            margin:none;
             padding: 10px;
-            border: 2px solid #ccc;
+            border: 1px solid #ccc;
             width: 80%;
-            min-height: 400px;
+            min-height: 500px;
+            position: center;
+            top: 20%;
         }
         #colorPicker {
             display: none;
@@ -111,12 +113,27 @@
                         <img src="justify.png" alt="" class="img-justify">
                     </a>
 
+                    <a href="#" onclick="undoText()">
+                        <i class="feature6"></i>
+                        <img src="Resources/undo-4-32.png" alt="" class="img-undo">
+                    </a>
+            
+                    <a href="#" onclick="redoText()">
+                        <i class="feature6"></i>
+                        <img src="Resources/action-redo-32.png" alt="" class="img-redo">
+                    </a>
+
                 </nav>
 
 
         </div>
     
     <div id="editor" contenteditable="true">
+    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here',
+    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default 
+    module text, and a search for 'Lorem Ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the 
+    years, sometimes by accident, sometimes on purpose (injected humor and the like).
 
 
     </div>
@@ -145,6 +162,15 @@
      {
         document.execCommand('justifyFull', false, null);
     }
+
+    function undoText() {
+        document.execCommand('undo', false, null);
+    }
+
+    function redoText() {
+        document.execCommand('redo', false, null);
+    }
+    
 
     </script>
 </body>
