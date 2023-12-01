@@ -84,6 +84,12 @@
                         <img src="italic-xxl.png" alt="" class="img-italic">
                     </a>
 
+                    <a href="#" onclick="toggleColorPicker()">
+                        <i class="feature4"></i>
+                        <img src="A (2).png" alt="" class="img-color">
+                    </a>
+                    <input type="color" id="colorPicker" onchange="changeColor()" style="display: none;">
+
 
                 </nav>
 
@@ -99,6 +105,17 @@
         
          function formatText(command) {
         document.execCommand(command, false, null);
+    }
+    
+    function changeColor() {
+        let color = document.getElementById('colorPicker').value;
+        document.execCommand('styleWithCSS', false, true);
+        document.execCommand('foreColor', false, color);
+    }
+
+    function toggleColorPicker() {
+        let colorPicker = document.getElementById('colorPicker');
+        colorPicker.style.display = colorPicker.style.display === 'block' ? 'none' : 'block';
     }
 
     </script>
