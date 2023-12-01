@@ -69,7 +69,12 @@
     <center>
         <div class="editor-panel">
                 <nav>
-                    
+                    <a href="#" onclick="formatText('bold')">
+                        <i class="feature1"></i>
+                        <img src="bold-xxl.png" alt="" class="img-bold">
+                    </a>
+
+
                 </nav>
 
 
@@ -82,7 +87,9 @@
     
     <script>
         
-       
+         function formatText(command) {
+        document.execCommand(command, false, null);
+    }
 
     </script>
 </body>
