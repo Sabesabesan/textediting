@@ -88,8 +88,28 @@
                         <i class="feature4"></i>
                         <img src="A (2).png" alt="" class="img-color">
                     </a>
+
                     <input type="color" id="colorPicker" onchange="changeColor()" style="display: none;">
 
+                    <a href="#" onclick="alignText('left')">
+                        <i class="feature5t"></i>
+                        <img src="left.png" alt="" class="img-left">
+                    </a>
+            
+                    <a href="#" onclick="alignText('center')">
+                        <i class="feature5"></i>
+                        <img src="center.png" alt="" class="img-center">
+                    </a>
+            
+                    <a href="#" onclick="alignText('right')">
+                        <i class="feature5"></i>
+                        <img src="right.png" alt="" class="img-right">
+                    </a>
+            
+                    <a href="#" onclick="justifyText()">
+                        <i class="feature5"></i>
+                        <img src="justify.png" alt="" class="img-justify">
+                    </a>
 
                 </nav>
 
@@ -106,7 +126,7 @@
          function formatText(command) {
         document.execCommand(command, false, null);
     }
-    
+
     function changeColor() {
         let color = document.getElementById('colorPicker').value;
         document.execCommand('styleWithCSS', false, true);
@@ -116,6 +136,14 @@
     function toggleColorPicker() {
         let colorPicker = document.getElementById('colorPicker');
         colorPicker.style.display = colorPicker.style.display === 'block' ? 'none' : 'block';
+    }
+    function alignText(align) {
+        document.execCommand('justify' + align, false, null);
+    }
+
+    function justifyText()
+     {
+        document.execCommand('justifyFull', false, null);
     }
 
     </script>
